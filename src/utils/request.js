@@ -2,7 +2,7 @@ import axois from 'axios'
 
 const request = axois.create({
     baseURL: 'http://geek.itheima.net/v1_0',
-    timeout: 5000
+    timeout: 10000
 })
 
 request.interceptors.request.use((config)=> {

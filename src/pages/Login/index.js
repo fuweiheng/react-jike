@@ -1,14 +1,16 @@
-
 import './index.scss'
 import { Card, Form, Input, Button } from 'antd'
 import logo from '@/assets/logo.png'
-
+import { fecthLogin } from '@/store/modules/user'
+import { useDispatch } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 const Login = () => {
-    const onFinish = (values)=>{
+    const dispatch = useDispatch()
+    const navigate = useNavigate()
+    const onFinish = async (values)=>{
+        await dispatch(fecthLogin(values))
         console.log(values)
-    }
-    const onFinishFailed = ()=>{
-        alert('请输入正确的验证码')
+        navigate('/')
     }
   return (
     <div className="login">
@@ -18,7 +20,6 @@ const Login = () => {
         <Form 
         validateTrigger='onBlur'
         onFinish={onFinish}
-        onFinishFailed={onFinishFailed}
         >
           <Form.Item
           name="mobile"
@@ -35,7 +36,7 @@ const Login = () => {
             <Input size="large" placeholder="请输入手机号"/>
           </Form.Item>
           <Form.Item
-          name="varifycode"
+          name="code"
           rules={[{ required: true, message: '请输入验证码!' }]}
           >
             <Input size="large" placeholder="请输入验证码" />
