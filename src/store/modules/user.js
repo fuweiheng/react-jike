@@ -1,29 +1,47 @@
 import { createSlice } from "@reduxjs/toolkit"
-import { request } from "@/utils"
-
+import { removeToken } from "@/utils"
+import { setToken as _setToken, getToken } from "@/utils"
+import { loginAPI, getProfileAPI } from "@/apis/user"
 const userStore = createSlice({
     name: 'user',
     initialState: {
-        token: localStorage.getItem('token_key') || '' 
+        token: getToken() || '' ,
+        userInfor: {}
     },
     reducers: {
         setToken(state, action){
             state.token = action.payload
-            localStorage.setItem('token_key', action.payload)
+            _setToken(action.payload)
+        },
+        setUserInfor(state, action){
+            state.userInfor = action.payload
+        },
+        clearUserInfor(state){
+            state.token = ''
+            state.userInfor = {}
+            removeToken()
         }
         
     }
 })
 
 
-const { setToken } = userStore.actions
+const { setToken, setUserInfor, clearUserInfor } = userStore.actions
 const userReducer = userStore.reducer
 
 const fecthLogin = (loginForm)=>{
     return async (dispatch)=>{
-        const res = await request.post('/authorizations', loginForm)
+        const res = await loginAPI(loginForm)
         dispatch(setToken(res.data.token))
     }
 }
-export {  fecthLogin }
+
+const fecthUserInfor = ()=>{
+    return async (dispatch)=>{
+        const res = await getProfileAPI()
+        dispatch(setUserInfor(res.data))
+    }
+}
+
+export {  fecthLogin,fecthUserInfor, clearUserInfor }
 export default userReducer

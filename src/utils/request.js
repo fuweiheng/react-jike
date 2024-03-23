@@ -1,11 +1,16 @@
 import axois from 'axios'
-
+import { getToken, removeToken } from './token'
+import router from '@/router'
 const request = axois.create({
     baseURL: 'http://geek.itheima.net/v1_0',
     timeout: 10000
 })
 
 request.interceptors.request.use((config)=> {
+    const token = getToken()
+    if(token){
+        config.headers.Authorization = `Bearer ${token}`
+    }
     return config
   }, (error)=> {
     return Promise.reject(error)
@@ -19,6 +24,11 @@ request.interceptors.response.use((response)=> {
   }, (error)=> {
     // 超出 2xx 范围的状态码都会触发该函数。
     // 对响应错误做点什么
+    if(error.response.status===401){
+      removeToken()
+      router.navigate('/login')
+      window.location.reload()
+    }
     return Promise.reject(error)
 })
 
