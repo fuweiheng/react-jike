@@ -5,12 +5,15 @@
 
 .header {
   padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
-
 .logo {
   width: 200px;
   height: 60px;
   background: url('~@/assets/logo.png') no-repeat center / 160px auto;
+  cursor: pointer;
 }
 
 .layout-content {
@@ -18,21 +21,450 @@
 }
 
 .user-info {
-  position: absolute;
-  right: 0;
-  top: 0;
-  padding-right: 20px;
+  display: flex;
+  flex: 1;
+
+  // padding-right: 20px;
   color: #fff;
   
   .user-name {
-    margin-right: 20px;
+    margin:0 20px;
   }
   
   .user-logout {
     display: inline-block;
     cursor: pointer;
   }
+  .user-menu{
+    width: 10%;
+    position: relative;
+    // height: 100%;
+  }
+  .user-avatar{
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+  }
+  .avatar{
+    height: 64px;
+    display: block;
+
+    
+  }
 }
 .ant-layout-header {
   padding: 0 !important;
 }
+
+.drop-down-menu{
+  text-rendering: optimizeLegibility;
+  --juejin-layer-golden-1: #faf3e5;
+  --juejin-layer-golden-2: #f6e7cb;
+  --juejin-component-hover: #e4e6eb;
+  --juejin-gradientgold_normal_start: #fde8c3;
+  --juejin-gradientgold_normal_end: #edd3a7;
+  --juejin-gradientgold_hover_start: #f1dfc0;
+  --juejin-gradientgold_hover_end: #e6c99b;
+  --juejin-gradientgold_click_start: #e9d5b3;
+  --juejin-gradientgold_click_end: #dac29a;
+  --juejin-layer_loading_start: rgba(228,230,235,0);
+  --juejin-layer_loading_end: rgba(228,230,235,0.5);
+  --juejin-layer_golden_2: #faf3e5;
+  --juejin-font_golden_4: #7e5d25;
+  --juejin-font-golden-1: #7e5d25;
+  --juejin-font-golden-2: #8a795c;
+  --juejin-font-golden-3: #d6b885;
+  --juejin-gray-0: #fff;
+  --juejin-gray-1-1: #e4e6eb;
+  --juejin-gray-1-2: rgba(228,230,235,0.5);
+  --juejin-gray-1-3: #e4e6eb;
+  --juejin-gray-2: #f2f3f5;
+  --juejin-gray-3: #f7f8fa;
+  --juejin-background: #f2f3f5;
+  --juejin-layer-1: #fff;
+  --juejin-layer-2-1: #f7f8fa;
+  --juejin-layer-2-2: rgba(247,248,250,0.7);
+  --juejin-layer-3-fill: #f2f3f5;
+  --juejin-layer-3-border: #e4e6eb;
+  --juejin-layer-4-dropdown: #fff;
+  --juejin-layer-5: #fff;
+  --juejin-brand-1-normal: #1e80ff;
+  --juejin-brand-2-hover: #1171ee;
+  --juejin-brand-3-click: #0060dd;
+  --juejin-brand-4-disable: #abcdff;
+  --juejin-brand-5-light: #eaf2ff;
+  --juejin-mask-1: rgba(0,0,0,0.4);
+  --juejin-mask-2: #fff;
+  --juejin-mask-3: none;
+  --juejin-brand-fill1-normal: rgba(30,128,255,0.05);
+  --juejin-brand-fill2-hover: rgba(30,128,255,0.1);
+  --juejin-brand-fill3-click: rgba(30,128,255,0.2);
+  --juejin-brand-stroke1-normal: rgba(30,128,255,0.3);
+  --juejin-brand-stroke2-hover: rgba(30,128,255,0.45);
+  --juejin-brand-stroke3-click: rgba(30,128,255,0.6);
+  --juejin-font_danger: #ff5132;
+  --juejin-font-1: #252933;
+  --juejin-font-2: #515767;
+  --juejin-font-3: #8a919f;
+  --juejin-font-4: #c2c8d1;
+  --juejin-font-brand1-normal: #1e80ff;
+  --juejin-font-brand2-hover: #1171ee;
+  --juejin-font-brand3-click: #0060dd;
+  --juejin-font-brand4-disable: #abcdff;
+  --juejin-font-success: #2bb91b;
+  --juejin-font-warning: #ff8412;
+  --juejin-font-danger: #ff5132;
+  --juejin-font-white-disable: #fff;
+  --juejin-font-white: #fff;
+  --juejin-success-1-normal: #00b453;
+  --juejin-success-2-deep: #00964e;
+  --juejin-success-3-light: #e2faed;
+  --juejin-warning-1-normal: #ff7426;
+  --juejin-warning-2-deep: #e05e00;
+  --juejin-warning-3-light: #fff3e5;
+  --juejin-danger-1-normal: #f64242;
+  --juejin-danger-2-deep: #cb2634;
+  --juejin-danger-3-light: #fff2ff;
+  --juejin-sub-1-purple: #9f54ff;
+  --juejin-sub-2-blue: #57a0ff;
+  --juejin-sub-3-cyan: #5ad7ff;
+  --juejin-sub-4-green: #33d790;
+  --juejin-sub-5-yellow: #ffcc15;
+  --juejin-sub-6-orange: #ff834e;
+  --juejin-sub-7-red: #ff5e54;
+  --juejin-coupon_1_button: #f64242;
+  --juejin-coupon_1_button_disable: #faa0a0;
+  --juejin-coupon_2_card: rgba(255,245,244,0.7);
+  --juejin-coupon_3_stroke: rgba(246,66,66,0.2);
+  --juejin-navigation: #fff;
+  --juejin-shade-1: rgba(0,0,0,0.4);
+  --juejin-shade-2: rgba(0,0,0,0.6);
+  --juejin-popup: #fff;
+  --juejin-popover: #464646;
+  --juejin-sheets: #f7f8fa;
+  --juejin-coupon-button: #f64242;
+  --juejin-coupon-button-disable: #faa0a0;
+  --juejin-coupon-card: rgba(255,245,244,0.7);
+  --juejin-layer-loading-start: #e4e6eb;
+  --juejin-layer-loading-end: rgba(228,230,235,0.5);
+  --juejin-font-priv-hint: #916be1;
+  --juejin-background-jscore-radar: #232323;
+  --juejin-button-shadow-hover: #ddd;
+  --juejin-icon-close-bg: rgba(0,0,0,0.3);
+  -webkit-font-smoothing: unset!important;
+  font-family: -apple-system,system-ui,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif,BlinkMacSystemFont,Helvetica Neue,PingFang SC,Hiragino Sans GB,Microsoft YaHei,Arial!important;
+  word-break: break-word;
+  line-height: normal;
+  list-style: none;
+  color: #86909c;
+  font-size: 1.167rem;
+  background: var(--juejin-popup);
+  border: 1px solid var(--juejin-gray-1-1);
+  border-radius: 4px;
+  padding: 20px;
+  position: absolute;
+  z-index: 999;
+  right: 24px;
+  top: 58px;
+  box-sizing: border-box;
+  cursor: auto;
+  box-shadow: 0 0 24px rgba(81,87,103,.16);
+
+  .user-card{
+    word-break: break-word;
+    line-height: normal;
+    list-style: none;
+    color: #86909c;
+    font-size: 1.167rem;
+    cursor: auto;
+  
+    .user-card-info{
+      word-break: break-word;
+      line-height: normal;
+      list-style: none;
+      color: #86909c;
+      font-size: 1.167rem;
+      cursor: auto;
+      display: flex;
+      margin-bottom: 16px;
+      .user-card-avatar-wrapper{
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        margin-right: 12px;
+        position: relative;
+
+        .jj-avatar{
+          display: inline-flex;
+          box-sizing: border-box;
+          width: 48px;
+          height: 48px;
+          border-radius: 50%;
+          margin-right: 12px;
+          position: relative;
+
+          .avatar-img{
+            position: relative;
+            box-sizing: border-box;
+            border-radius: 50%;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            background-color: var(--juejin-gray-3);
+          }
+
+        }
+
+      }
+    }
+    .user-detail{
+      list-style: none;
+      color: #86909c;
+      font-size: 1.167rem;
+      cursor: auto;
+      width: 164px;
+      .username{
+        background-color: transparent;
+        text-decoration: none;
+        cursor: pointer;
+        word-break: break-all;
+        font-size: 16px;
+        line-height: 24px;
+        color: var(--juejin-font-1);
+        display: -webkit-box;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 1;
+        margin: 2px 0;
+      }
+      .ore{
+        background-color: transparent;
+        margin: initial;
+        text-decoration: none;
+        cursor: pointer;
+        display: inline-block;
+        color: var(--juejin-font-1);
+        font-size: 12px;
+        line-height: 18px;
+        .ore-arrow-icon{
+          color: var(--juejin-font-1);
+          font-size: 12px;
+          line-height: 18px;
+          width: 10;
+          height: 10;
+          overflow: hidden;
+          fill: var(--juejin-font-3);
+          vertical-align: middle;
+          margin-top: -2px;
+        }
+      }
+      
+    }
+    .progress-bar{
+      margin: initial;
+      text-decoration: none;
+      cursor: pointer;
+      display: block;
+      font-size: 12px;
+      color: var(--juejin-font-brand1-normal);
+      line-height: 18px;
+      border-radius: 4px;
+      box-sizing: border-box;
+      width: 224px;
+      padding: 6px 8px 8px;
+      background: url(//lf3-cdn-tos.bytescm.com/obj/static/xitu_juejin_web/img/progress-bar.a63566c.png) no-repeat;
+      background-size: 100% 100%;
+      margin-bottom: 16px;
+
+      .jscore{
+        font-size: 12px;
+        color: var(--juejin-font-brand1-normal);
+        line-height: 18px;
+        display: flex;
+        margin-bottom: 4px;
+        justify-content: space-between;
+        .jscore-level{
+          font-size: 12px;
+          color: var(--juejin-font-brand1-normal);
+          line-height: 18px;
+          .bold{
+            line-height: 18px;
+            font-weight: 600;
+          }
+        }
+        .progress{
+
+          font-size: 12px;
+          color: var(--juejin-font-brand1-normal);
+          line-height: 18px;
+          .jscore-arrow-icon{
+            font-size: 12px;
+            color: var(--juejin-font-brand1-normal);
+            line-height: 18px;
+            width: 10;
+            height: 10;
+            overflow: hidden;
+            fill: var(--juejin-font-brand1-normal);
+            vertical-align: middle;
+            margin-top: -2px;
+          }
+        }
+      }
+      .bar{
+        color: var(--juejin-font-brand1-normal);
+        line-height: 18px;
+        width: 208px;
+        height: 5px;
+        border-radius: 4px;
+        background: var(--juejin-brand-fill3-click);
+        position: relative;
+        .current-bar{
+          color: var(--juejin-font-brand1-normal);
+          line-height: 18px;
+          height: 5px;
+          background: var(--juejin-brand-1-normal);
+          border-radius: 4px;
+          position: absolute;
+          left: 0;
+          width: 99.1467px;
+        }
+      }
+    }
+
+    .actions-count-list{
+      color: #86909c;
+      font-size: 1.167rem;
+      cursor: auto;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      border-bottom: 1px solid var(--juejin-gray-1-2);
+      padding-bottom: 12px;
+      margin-bottom: 10px;
+      list-style-type: none;
+      .item{
+        width: 74px;
+        height: 40px;
+        text-align: center;
+        line-height: 40px;
+        .item-count{
+          text-align: center;
+          cursor: pointer;
+          font-weight: 500;
+          font-size: 16px;
+          line-height: 18px;
+          color: var(--juejin-font-1);
+          margin-bottom: 4px;
+        }
+        .item-name{
+          text-align: center;
+          cursor: pointer;
+          color: var(--juejin-font-3);
+          font-weight: 400;
+          font-size: 12px;
+          line-height: 18px;
+        }
+      }
+    }
+
+
+  }
+  .dropdown-list{
+    line-height: normal;
+    list-style: none;
+    color: #86909c;
+    font-size: 1.167rem;
+    cursor: auto;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--juejin-gray-1-2);
+    padding-bottom: 10px;
+    box-sizing: border-box;
+    list-style-type: none;
+
+    .dropdown-item{
+      cursor: auto;
+      list-style: none;
+      width: 104px;
+      height: 40px;
+      line-height: 40px;
+      color: var(--juejin-font-1);
+      font-size: 14px;
+
+      .open-menu-page{
+        list-style: none;
+        line-height: 40px;
+        font-size: 14px;
+        background-color: transparent;
+        margin: initial;
+        text-decoration: none;
+        cursor: pointer;
+        color: var(--juejin-font-1);
+        height: 40px;
+        display: flex;
+        align-items: center;
+        
+        .menu-icon{
+          font-size: 14px;
+          cursor: pointer;
+          position: relative;
+          margin: 0 8px;
+          height: 20px;
+          width: 20px;
+          line-height: 20px;
+          color: #8a919f;
+        }
+
+        .menu-name{
+          line-height: 40px;
+          font-size: 14px;
+          cursor: pointer;
+          color: var(--juejin-font-1);
+          display: inline-block;
+        }
+      }
+    }
+  }
+
+  .group{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    color: var(--juejin-font-3);
+
+    .setting{
+      font-size: 1rem;
+      line-height: 1.5rem;
+      background-color: transparent;
+      margin: initial;
+      text-decoration: none;
+      cursor: pointer;
+      color: var(--juejin-font-3);
+    }
+     .logout{
+      font-size: 1rem;
+      line-height: 1.5rem;
+      background-color: transparent;
+      margin: initial;
+      text-decoration: none;
+      cursor: pointer;
+      color: var(--juejin-font-3);
+    }
+  }
+
+}
+
+
+
+
+
+
